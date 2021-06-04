@@ -92,7 +92,7 @@
                         
                         <div class="navbar-btn d-none d-sm-inline-block">
                             <ul>
-                                <li><a class="solid" href="#">Download</a></li>
+                                <li><a class="solid" href="#" onclick="clickHandler();">Download</a></li>
                             </ul>
                         </div>
                     </nav> <!-- navbar -->
@@ -1019,7 +1019,12 @@
             renewalDate: 1577880288 // to remind users to renew
             }
         );
+        
+        function clickHandler() {
+            Appcues.track("Clicked download");
+        }
     </script>
+
 </body>
 
 </html>
