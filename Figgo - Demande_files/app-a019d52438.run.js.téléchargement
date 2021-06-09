@@ -1,0 +1,38 @@
+var figgo;
+(function (figgo) {
+    var FiggoRun = /** @class */ (function () {
+        function FiggoRun($rootScope, $window) {
+            $rootScope.$on('$stateChangeError', function (evt, toState, toParams, fromState, fromParams, error) {
+                if (angular.isObject(error) && error.code && angular.isString(error.code)) {
+                    switch (error.code) {
+                        case 'NOT_AUTHENTICATED':
+                            // go to the login page
+                            $window.location.href = "/login";
+                            break;
+                        default:
+                        // set the error object on the error state and go there
+                        //$state.get('error').error = error;
+                        //$state.go('error');
+                    }
+                }
+                else {
+                    // unexpected error
+                    //$state.go('error');
+                }
+            });
+            // //à faire en n+1 (pour que ça passe après le default event stateChanged)
+            // $timeout(() => {
+            // 	$state.go(STATES.STARTUP);
+            // });
+        }
+        FiggoRun.$inject = [
+            '$rootScope',
+            '$window'
+        ];
+        return FiggoRun;
+    }());
+    figgo.FiggoRun = FiggoRun;
+})(figgo || (figgo = {}));
+angular
+    .module('figgo')
+    .run(figgo.FiggoRun);
