@@ -41,8 +41,8 @@ li a:hover:not(.active) {
   left: 91%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  background-color: #555;
   color: white;
+  width: 32px;
   font-size: 16px;
   padding: 12px 24px;
   border: none;
@@ -50,5 +50,5 @@ li a:hover:not(.active) {
 }
 
 .container .btn:hover {
-  background-color: black;
+  background-color: rgb(255, 191, 0);
 }
