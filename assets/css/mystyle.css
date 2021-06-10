@@ -4,6 +4,7 @@ img {
 
 body {
   margin:0;
+  overflow:hidden;
   font-family: Source Sans Pro,Tahoma,sans-serif;
 }
 
