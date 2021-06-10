@@ -30,7 +30,8 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: #111;
-  color: white;
+li a:hover {
+  background-color: white;
+  color: black;
+  text-decoration: none;
 }
